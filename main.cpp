@@ -1,5 +1,13 @@
 #include <iostream>
 
+template<typename T>
+T getInput(const char* message) {
+    T input;
+    std::cout << message << std::endl;
+    std::cin >> input;
+    return input;
+}
+
 int main() {
     std::cout << "Hello, Crush Baru" << std::endl;
     std::cout << "Alesya is puteri lilin" << std::endl;
