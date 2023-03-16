@@ -16,5 +16,6 @@ int main() {
     std::cout << "Amin ya rabbalalamin" << std::endl;
     std::cout << "Nak bf kaya u" << std::endl;
     std::cout << "MENGANTUKNYAAAA kali terakhir" << std::endl;
+    std::cout << "Katil memanggil" << std::endl;
     return 0;
 }
