@@ -15,7 +15,7 @@ namespace question3 {
      * 1 = Basic (5% discount)
      * 2 = Premium (10% discount)
      */
-    enum Membership {
+    enum class Membership {
         None = 0,
         Basic = 1,
         Premium = 2
