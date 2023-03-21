@@ -11,7 +11,7 @@ namespace common {
      * @return returns valid input
      */
     template<typename T>
-    inline T getNumInput(const char* message, bool (*func)(T)) {
+    inline T getNumInput(const char *message, bool (*func)(T)) {
         T input;
         bool isValid;
         do {
@@ -22,4 +22,17 @@ namespace common {
         return input;
     }
 
+    template<typename EnumType>
+    inline EnumType getEnumInput(const char *message, int minRange, int maxRange) {
+        int input;
+        EnumType converted;
+
+        do {
+            std::cout << message << ": ";
+            std::cin >> input;
+        } while (input < minRange || input > maxRange);
+
+        converted = static_cast<EnumType>(input);
+        return converted;
+    }
 }
