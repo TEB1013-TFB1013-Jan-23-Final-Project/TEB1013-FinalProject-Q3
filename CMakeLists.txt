@@ -3,4 +3,4 @@ project(TEB1013_FinalProject_Q3)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(TEB1013_FinalProject_Q3 main.cpp)
+add_executable(TEB1013_FinalProject_Q3 main.cpp common.h common.inl)
