@@ -7,4 +7,12 @@
 
 #include "common.inl"
 
+namespace common {
+    /**
+     * Prints a line for menu separation purposes.
+     */
+    void printDivider();
+}
+
+
 #endif //TEB1013_FINALPROJECT_Q3_COMMON_H
