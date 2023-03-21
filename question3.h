@@ -11,6 +11,9 @@
 #define TYPE_OF_CAR_MAX 3
 #define TYPE_OF_CAR_MIN 0
 
+#define TYPE_OF_WASH_MAX 2
+#define TYPE_OF_WASH_MIN 0
+
 namespace question3 {
     /**
      * Possible Membership options (enum variant).
@@ -24,11 +27,30 @@ namespace question3 {
         Premium = 2
     };
 
+    /**
+     * Possible TypeOfCar options (enum variant).
+     * 0 = Compact (- RM5.00)
+     * 1 = Sedan (+ RM0.00)
+     * 2 = MPV (+ RM5.00)
+     * 3 = Pickup Truck (+ RM10.00)
+     */
     enum class TypeOfCar {
         Compact = 0,
         Sedan = 1,
         Mpv = 2,
         Pickup = 3
+    };
+
+    /**
+     * Possible TypeOfWash options (enum variant).
+     * 0 = Quick (RM10.00)
+     * 1 = Normal (RM15.00)
+     * 2 = Thorough (RM20.00)
+     */
+    enum class TypeOfWash {
+        Quick = 0,
+        Normal = 1,
+        Thorough = 2
     };
 
     /**
@@ -38,7 +60,19 @@ namespace question3 {
      */
     Membership getMembership();
 
+    /**
+     * Prints type of car options, let user pick which car type applies to the customer (using int),
+     * and returns the respective TypeOfCar enum variant for the int.
+     * @return TypeOfCar enum variant
+     */
     TypeOfCar getTypeOfCar();
+
+    /**
+     * Prints type of wash options, let user pick which wash type the customer requests (using int),
+     * and returns the respective TypeOfWash enum variant for the int.
+     * @return TypeOfWash enum variant
+     */
+     TypeOfWash getTypeOfWash();
 }
 
 /**
@@ -56,5 +90,13 @@ std::ostream& operator<<(std::ostream& out, question3::Membership membership);
  * @return TypeOfCar enum variant format for printing / debugging
  */
 std::ostream &operator<<(std::ostream &out, question3::TypeOfCar typeOfCar);
+
+/**
+ * Make TypeOfWash enum work with << operator. This is meant for printing and debugging purposes.
+ * @param out ostream reference
+ * @param membership TypeOfWash enum variant
+ * @return TypeOfWash enum variant format for printing / debugging
+ */
+std::ostream &operator<<(std::ostream &out, question3::TypeOfWash typeOfWash);
 
 #endif //TEB1013_FINALPROJECT_Q3_QUESTION3_H

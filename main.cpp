@@ -6,6 +6,7 @@ int main() {
     int numOfCustomers;
     question3::Membership membership;
     question3::TypeOfCar typeOfCar;
+    question3::TypeOfWash typeOfWash;
 
     numOfCustomers = common::getNumInput<int>("Enter the number of customers for the day",
                                               [](int input) { return input >= 0; });
@@ -17,9 +18,11 @@ int main() {
 
         membership = question3::getMembership();
         typeOfCar = question3::getTypeOfCar();
+        typeOfWash = question3::getTypeOfWash();
 
         std::cout << "Customer " << i << "'s membership: " << membership << std::endl;
         std::cout << "Customer " << i << "'s car type: " << typeOfCar << std::endl;
+        std::cout << "Customer " << i << "'s car wash: " << typeOfWash << std::endl;
     }
     return 0;
 }
