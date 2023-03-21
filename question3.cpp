@@ -67,6 +67,25 @@ namespace question3 {
         typeOfWash = common::getEnumInput<TypeOfWash>("SELECT DESIRED CAR WASH", TYPE_OF_WASH_MIN, TYPE_OF_WASH_MAX);
         return typeOfWash;
     }
+
+    /**
+     * Prints additional service options, let user pick additional service the customer requests (using int),
+     * and returns the respective AdditionalService enum variant for the int.
+     * @return AdditionalService enum variant
+     */
+    AdditionalService getAdditionalService() {
+        AdditionalService additionalService;
+        printDivider();
+        std::cout << "WHAT IS THE ADDITIONAL SERVICE THE CUSTOMER DESIRES?" << std::endl;
+        std::cout << "0.\tQUICK WASH" << std::endl;
+        std::cout << "1.\tNORMAL WASH" << std::endl;
+        std::cout << "2.\tTHOROUGH WASH" << std::endl;
+        printDivider();
+
+        additionalService = common::getEnumInput<AdditionalService>("SELECT DESIRED ADDITIONAL SERVICE",
+                                                                    ADDITIONAL_SERVICE_MIN, ADDITIONAL_SERVICE_MAX);
+        return additionalService;
+    }
 }
 
 /**
@@ -129,7 +148,7 @@ std::ostream &operator<<(std::ostream &out, question3::TypeOfCar typeOfCar) {
  * @return TypeOfWash enum variant format for printing / debugging
  */
 std::ostream &operator<<(std::ostream &out, question3::TypeOfWash typeOfWash) {
-    const char* res;
+    const char *res;
     switch (typeOfWash) {
         case question3::TypeOfWash::Quick:
             res = "Quick";
@@ -139,6 +158,34 @@ std::ostream &operator<<(std::ostream &out, question3::TypeOfWash typeOfWash) {
             break;
         case question3::TypeOfWash::Thorough:
             res = "Thorough";
+            break;
+        default:
+            res = "Undefined";
+    }
+
+    return out << res;
+}
+
+/**
+ * Make AdditionalService enum work with << operator. This is meant for printing and debugging purposes.
+ * @param out ostream reference
+ * @param membership AdditionalService enum variant
+ * @return AdditionalService enum variant format for printing / debugging
+ */
+std::ostream &operator<<(std::ostream &out, question3::AdditionalService additionalService) {
+    const char *res;
+    switch (additionalService) {
+        case question3::AdditionalService::None:
+            res = "None";
+            break;
+        case question3::AdditionalService::Wax:
+            res = "Wax";
+            break;
+        case question3::AdditionalService::Polish:
+            res = "Polish";
+            break;
+        case question3::AdditionalService::WaxAndPolish:
+            res = "Wax and Polish";
             break;
         default:
             res = "Undefined";

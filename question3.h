@@ -14,6 +14,9 @@
 #define TYPE_OF_WASH_MAX 2
 #define TYPE_OF_WASH_MIN 0
 
+#define ADDITIONAL_SERVICE_MAX 3
+#define ADDITIONAL_SERVICE_MIN 0
+
 namespace question3 {
     /**
      * Possible Membership options (enum variant).
@@ -54,6 +57,27 @@ namespace question3 {
     };
 
     /**
+     * Possible AdditionalService options (enum variant).
+     * 0 = None (+ RM0.00)
+     * 1 = Wax (+ RM3.00-RM6.00)
+     * 2 = Polish (+ RM3.00-RM6.00)
+     * 3 = WaxAndPolish (+ RM5.00-RM8.00)
+     */
+    enum class AdditionalService {
+        None = 0,
+        Wax = 1,
+        Polish = 2,
+        WaxAndPolish = 3
+    };
+
+    struct CustomerData {
+        Membership membership;
+        TypeOfCar typeOfCar;
+        TypeOfWash typeOfWash;
+        AdditionalService additionalService;
+    };
+
+    /**
      * Prints membership options, let user pick which membership applies to the customer (using int),
      * and returns the respective Membership enum variant for the int.
      * @return Membership enum variant
@@ -73,6 +97,13 @@ namespace question3 {
      * @return TypeOfWash enum variant
      */
      TypeOfWash getTypeOfWash();
+
+    /**
+     * Prints additional service options, let user pick additional service the customer requests (using int),
+     * and returns the respective AdditionalService enum variant for the int.
+     * @return AdditionalService enum variant
+     */
+    AdditionalService getAdditionalService();
 }
 
 /**
@@ -98,5 +129,13 @@ std::ostream &operator<<(std::ostream &out, question3::TypeOfCar typeOfCar);
  * @return TypeOfWash enum variant format for printing / debugging
  */
 std::ostream &operator<<(std::ostream &out, question3::TypeOfWash typeOfWash);
+
+/**
+ * Make AdditionalService enum work with << operator. This is meant for printing and debugging purposes.
+ * @param out ostream reference
+ * @param membership AdditionalService enum variant
+ * @return AdditionalService enum variant format for printing / debugging
+ */
+std::ostream &operator<<(std::ostream &out, question3::AdditionalService additionalService);
 
 #endif //TEB1013_FINALPROJECT_Q3_QUESTION3_H
