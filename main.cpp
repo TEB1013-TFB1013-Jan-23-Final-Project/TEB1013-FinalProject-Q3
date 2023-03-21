@@ -12,6 +12,8 @@ int main() {
     numOfCustomers = common::getNumInput<int>("Enter the number of customers for the day",
                                               [](int input) { return input >= 0; });
 
+    question3::CustomerData database[numOfCustomers];
+
     for (int i = 0; i < numOfCustomers; i++) {
         common::printDivider();
         std::cout << "\t\tCUSTOMER " << i << std::endl;
@@ -22,11 +24,15 @@ int main() {
         typeOfWash = question3::getTypeOfWash();
         additionalService = question3::getAdditionalService();
 
+        database[i] = question3::CustomerData {
+            membership, typeOfCar, typeOfWash, additionalService
+        };
 
         std::cout << "Customer " << i << "'s membership: " << membership << std::endl;
         std::cout << "Customer " << i << "'s car type: " << typeOfCar << std::endl;
         std::cout << "Customer " << i << "'s car wash: " << typeOfWash << std::endl;
         std::cout << "Customer " << i << "'s additional service: " << additionalService << std::endl;
     }
+
     return 0;
 }

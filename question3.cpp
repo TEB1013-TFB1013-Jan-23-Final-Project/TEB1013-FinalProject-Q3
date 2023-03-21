@@ -77,9 +77,10 @@ namespace question3 {
         AdditionalService additionalService;
         printDivider();
         std::cout << "WHAT IS THE ADDITIONAL SERVICE THE CUSTOMER DESIRES?" << std::endl;
-        std::cout << "0.\tQUICK WASH" << std::endl;
-        std::cout << "1.\tNORMAL WASH" << std::endl;
-        std::cout << "2.\tTHOROUGH WASH" << std::endl;
+        std::cout << "0.\tNONE" << std::endl;
+        std::cout << "1.\tWAX" << std::endl;
+        std::cout << "2.\tPOLISH" << std::endl;
+        std::cout << "3.\tWAX AND POLISH" << std::endl;
         printDivider();
 
         additionalService = common::getEnumInput<AdditionalService>("SELECT DESIRED ADDITIONAL SERVICE",
