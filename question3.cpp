@@ -88,6 +88,13 @@ namespace question3 {
         return additionalService;
     }
 
+    /**
+     * Calculates the total price for the car wash by checking the type of wash, type of car, additional services,
+     * and membership status/tier.
+     * For breakdown of the prices, check out the docs for each type in its respective enum.
+     * @param customerData struct containing Membership, TypeOfCar, TypeOfWash, AdditionalService
+     * @return total price of the car wash including the additional services
+     */
     float calculateTotalPrice(CustomerData &customerData) {
         float total = 0.0f;
 
