@@ -87,6 +87,75 @@ namespace question3 {
                                                                     ADDITIONAL_SERVICE_MIN, ADDITIONAL_SERVICE_MAX);
         return additionalService;
     }
+
+    float calculateTotalPrice(CustomerData &customerData) {
+        float total = 0.0f;
+
+        switch (customerData.typeOfWash) {
+            case TypeOfWash::Quick:
+                total += 10.0f;
+                break;
+            case TypeOfWash::Normal:
+                total += 15.0f;
+                break;
+            case TypeOfWash::Thorough:
+                total += 20.0f;
+        }
+
+        switch (customerData.typeOfCar) {
+            case TypeOfCar::Compact:
+                total -= 5.0f;
+                break;
+            case TypeOfCar::Sedan:
+                total += 0.0f;
+                break;
+            case TypeOfCar::Mpv:
+                total += 5.0f;
+                break;
+            case TypeOfCar::Pickup:
+                total += 10.0f;
+        }
+
+        switch (customerData.additionalService) {
+            case AdditionalService::None:
+                total += 0.0f;
+                break;
+            case AdditionalService::Wax:
+                if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
+                    total += 2.0f;
+                } else {
+                    total += 5.0f;
+                }
+                break;
+            case AdditionalService::Polish:
+                if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
+                    total += 3.0f;
+                } else {
+                    total += 6.0f;
+                }
+                break;
+            case AdditionalService::WaxAndPolish:
+                if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
+                    total += 5.0f;
+                } else {
+                    total += 8.0f;
+                }
+        }
+
+        switch (customerData.membership) {
+            case Membership::None:
+                total *= 1.0f;
+                break;
+            case Membership::Basic:
+                total *= (1.0f - 0.05f);
+                break;
+            case Membership::Premium:
+                total *= (1.0f - 0.1f);
+                break;
+        }
+
+        return total;
+    }
 }
 
 /**

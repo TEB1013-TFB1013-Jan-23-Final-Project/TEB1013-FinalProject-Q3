@@ -59,7 +59,7 @@ namespace question3 {
     /**
      * Possible AdditionalService options (enum variant).
      * 0 = None (+ RM0.00)
-     * 1 = Wax (+ RM3.00-RM6.00)
+     * 1 = Wax (+ RM2.00-RM5.00)
      * 2 = Polish (+ RM3.00-RM6.00)
      * 3 = WaxAndPolish (+ RM5.00-RM8.00)
      */
@@ -104,6 +104,8 @@ namespace question3 {
      * @return AdditionalService enum variant
      */
     AdditionalService getAdditionalService();
+
+    float calculateTotalPrice(CustomerData &customerData);
 }
 
 /**
