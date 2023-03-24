@@ -17,6 +17,27 @@
 #define ADDITIONAL_SERVICE_MAX 3
 #define ADDITIONAL_SERVICE_MIN 0
 
+#define QUICK_WASH 10.0f
+#define NORMAL_WASH 15.0f
+#define THOROUGH_WASH 20.0f
+
+#define COMPACT_CAR (-5.0f)
+#define SEDAN_CAR 0.0f
+#define MPV_CAR 5.0f
+#define PICKUP_TRUCK 10.0f
+
+#define NO_SERVICE 0.0f
+#define WAX_SMALL_CAR_SERVICE 2.0f
+#define WAX_BIG_CAR_SERVICE 5.0f
+#define POLISH_SMALL_CAR_SERVICE 3.0f
+#define POLISH_BIG_CAR_SERVICE 6.0f
+#define WAX_AND_POLISH_SMALL_CAR_SERVICE 5.0f
+#define WAX_AND_POLISH_BIG_CAR_SERVICE 8.0f
+
+#define NO_MEMBERSHIP 0.0f
+#define BASIC_MEMBERSHIP 0.05f
+#define PREMIUM_MEMBERSHIP 0.1f
+
 namespace question3 {
     /**
      * Possible Membership options (enum variant).

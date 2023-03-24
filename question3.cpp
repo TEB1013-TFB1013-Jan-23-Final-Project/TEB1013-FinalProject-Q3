@@ -100,64 +100,64 @@ namespace question3 {
 
         switch (customerData.typeOfWash) {
             case TypeOfWash::Quick:
-                total += 10.0f;
+                total += QUICK_WASH;
                 break;
             case TypeOfWash::Normal:
-                total += 15.0f;
+                total += NORMAL_WASH;
                 break;
             case TypeOfWash::Thorough:
-                total += 20.0f;
+                total += THOROUGH_WASH;
         }
 
         switch (customerData.typeOfCar) {
             case TypeOfCar::Compact:
-                total -= 5.0f;
+                total += COMPACT_CAR;
                 break;
             case TypeOfCar::Sedan:
-                total += 0.0f;
+                total += SEDAN_CAR;
                 break;
             case TypeOfCar::Mpv:
-                total += 5.0f;
+                total += MPV_CAR;
                 break;
             case TypeOfCar::Pickup:
-                total += 10.0f;
+                total += PICKUP_TRUCK;
         }
 
         switch (customerData.additionalService) {
             case AdditionalService::None:
-                total += 0.0f;
+                total += NO_SERVICE;
                 break;
             case AdditionalService::Wax:
                 if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
-                    total += 2.0f;
+                    total += WAX_SMALL_CAR_SERVICE;
                 } else {
-                    total += 5.0f;
+                    total += WAX_BIG_CAR_SERVICE;
                 }
                 break;
             case AdditionalService::Polish:
                 if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
-                    total += 3.0f;
+                    total += POLISH_SMALL_CAR_SERVICE;
                 } else {
-                    total += 6.0f;
+                    total += POLISH_BIG_CAR_SERVICE;
                 }
                 break;
             case AdditionalService::WaxAndPolish:
                 if (customerData.typeOfCar == TypeOfCar::Compact || customerData.typeOfCar == TypeOfCar::Sedan) {
-                    total += 5.0f;
+                    total += WAX_AND_POLISH_SMALL_CAR_SERVICE;
                 } else {
-                    total += 8.0f;
+                    total += WAX_AND_POLISH_BIG_CAR_SERVICE;
                 }
         }
 
         switch (customerData.membership) {
             case Membership::None:
-                total *= 1.0f;
+                total *= (1.0f - NO_MEMBERSHIP);
                 break;
             case Membership::Basic:
-                total *= (1.0f - 0.05f);
+                total *= (1.0f - BASIC_MEMBERSHIP);
                 break;
             case Membership::Premium:
-                total *= (1.0f - 0.1f);
+                total *= (1.0f - PREMIUM_MEMBERSHIP);
                 break;
         }
 
