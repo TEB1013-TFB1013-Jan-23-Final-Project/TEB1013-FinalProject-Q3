@@ -64,8 +64,10 @@ int main() {
                    << std::endl;
     }
 
-    outputFile.close();
-    std::cout << "[+] Customers' data is saved and file is closed." << std::endl;
+    if (outputFile.is_open()) {
+        outputFile.close();
+        std::cout << "[+] Customers' data is saved and file is closed." << std::endl;
+    }
 
     return 0;
 }
